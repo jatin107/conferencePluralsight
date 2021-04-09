@@ -14,7 +14,8 @@ public class AppConfig {
    // @Scope(value = BeanDefinition.SCOPE_PROTOTYPE)//prototype
     //@Scope(value="singleton")//
     public SpeakerService getSpeakerService() {
-        SpeakerServiceImpl service=new SpeakerServiceImpl(getSpeakerRepository());//Constructor Injection
+        //SpeakerServiceImpl service=new SpeakerServiceImpl(getSpeakerRepository());//Constructor Injection
+        SpeakerServiceImpl service=new SpeakerServiceImpl();//AutoWired the dependency
         //service.setRepository(getSpeakerRepository());//Setter Injection
         return service;
 
