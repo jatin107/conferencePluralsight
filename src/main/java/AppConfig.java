@@ -9,8 +9,8 @@ import org.springframework.context.annotation.Configuration;
 public class AppConfig {
     @Bean(name = "speakerService")
     public SpeakerService getSpeakerService() {
-        SpeakerServiceImpl service=new SpeakerServiceImpl();
-        service.setRepository(getSpeakerRepository());//Setter Injection
+        SpeakerServiceImpl service=new SpeakerServiceImpl(getSpeakerRepository());//Constructor Injection
+        //service.setRepository(getSpeakerRepository());//Setter Injection
         return service;
 
     }
