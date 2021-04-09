@@ -10,7 +10,8 @@ import org.springframework.context.annotation.Scope;
 @Configuration
 public class AppConfig {
     @Bean(name = "speakerService")
-    @Scope(value = BeanDefinition.SCOPE_SINGLETON)
+    @Scope(value = BeanDefinition.SCOPE_SINGLETON)//singleton
+   // @Scope(value = BeanDefinition.SCOPE_PROTOTYPE)//prototype
     //@Scope(value="singleton")//
     public SpeakerService getSpeakerService() {
         SpeakerServiceImpl service=new SpeakerServiceImpl(getSpeakerRepository());//Constructor Injection
